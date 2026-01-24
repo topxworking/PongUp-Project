@@ -11,6 +11,7 @@ public class MainMenuManager : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject playButton;
     public GameObject exitButton;
+    public GameObject hignScore;
     public TextMeshProUGUI highScoreText;
 
     void Start()
@@ -41,6 +42,7 @@ public class MainMenuManager : MonoBehaviour
 
             playButton.SetActive(isActive);
             exitButton.SetActive(isActive);
+            hignScore.SetActive(isActive);
         }
     }
 }
