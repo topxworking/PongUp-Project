@@ -11,7 +11,7 @@ public class MainMenuManager : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject playButton;
     public GameObject exitButton;
-    public GameObject hignScore;
+    public GameObject highScore;
     public TextMeshProUGUI highScoreText;
 
     void Start()
@@ -42,7 +42,13 @@ public class MainMenuManager : MonoBehaviour
 
             playButton.SetActive(isActive);
             exitButton.SetActive(isActive);
-            hignScore.SetActive(isActive);
+            highScore.SetActive(isActive);
         }
+    }
+
+    public void ResetHignScoreButton()
+    {
+        PlayerPrefs.DeleteKey("HighScore");
+        highScoreText.text = "High Score: 0";
     }
 }
