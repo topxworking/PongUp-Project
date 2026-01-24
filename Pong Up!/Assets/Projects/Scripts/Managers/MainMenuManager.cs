@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,16 @@ public class MainMenuManager : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject playButton;
     public GameObject exitButton;
+    public TextMeshProUGUI highScoreText;
+
+    void Start()
+    {
+        if (highScoreText != null)
+        {
+            int highScore = PlayerPrefs.GetInt("HighScore", 0);
+            highScoreText.text = "High Score: " + highScore.ToString();
+        }
+    }
 
     public void PlayButton()
     {
