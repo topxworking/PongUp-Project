@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,11 @@ public class PaddleController : MonoBehaviour
     public AudioClip hitSound;
     private AudioSource audioSource;
 
+    [Header("Item Settings")]
+    public float powerUpDuration = 5f;
+    private Vector3 originalScale;
+    private Coroutine sizeRoutine;
+
     private GameInputs inputs;
     private InputAction moveAction;
     private InputAction dragAction;
@@ -30,6 +36,11 @@ public class PaddleController : MonoBehaviour
         inputs = new GameInputs();
         moveAction = inputs.Player.Move;
         dragAction = inputs.Player.Drag;
+    }
+
+    void Start()
+    {
+        originalScale = transform.localScale;
     }
 
     void OnEnable()
@@ -105,5 +116,42 @@ public class PaddleController : MonoBehaviour
                 Destroy(effect.gameObject, 1f);
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Item"))
+        {
+            Item item = collision.GetComponent<Item>();
+            ApplyEffect(item.itemType);
+            Destroy(collision.gameObject);
+        }
+    }
+
+    void ApplyEffect(ItemType itemType)
+    {
+        switch (itemType)
+        {
+            case ItemType.Score5:
+                GameManager.Instance.AddScore(5);
+                break;
+            case ItemType.Score10:
+                GameManager.Instance.AddScore(10);
+                break;
+            case ItemType.LargePaddle:
+                if (sizeRoutine != null)
+                {
+                    StopCoroutine(sizeRoutine);
+                }
+                sizeRoutine = StartCoroutine(LargePaddleRoutine());
+                break;
+        }
+    }
+
+    IEnumerator LargePaddleRoutine()
+    {
+        transform.localScale = new Vector3(originalScale.x * 1.5f, originalScale.y, originalScale.z);
+        yield return new WaitForSeconds(powerUpDuration);
+        transform.localScale = originalScale;
     }
 }

@@ -32,6 +32,14 @@ public class GameManager : MonoBehaviour
     [Header("Scene Management")]
     public string mainMenuSceneName;
 
+    [Header("Item Drop System")]
+    public GameObject[] itemPrefabs;
+    public float minSpawnDelay = 5f;
+    public float maxSpawnDelay = 15f;
+    public float spawnYLimit = 6f;
+    public float spawnXLimit = 7f;
+
+    private Coroutine itemSpawnerCoroutine;
     private int lastDifficultyMilestone = 0;
     private int currentScore = 0;
     private bool isGameActive = false;
@@ -86,6 +94,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         pauseButton.SetActive(true);
         ballRb.linearVelocity = new Vector2(Random.Range(-2f, 2f), -6f);
+
+        if (itemSpawnerCoroutine != null)
+        {
+            StopCoroutine(itemSpawnerCoroutine);
+        }
+        itemSpawnerCoroutine = StartCoroutine(SpawnItemRoutine());
     }
     public void AddScore(int amount)
     {
@@ -150,6 +164,11 @@ public class GameManager : MonoBehaviour
             audioSource.PlayOneShot(booSound);
         }
 
+        if (itemSpawnerCoroutine != null)
+        {
+            StopCoroutine(itemSpawnerCoroutine);
+        }
+
         gameOverPanel.SetActive(true);
         finalScoreText.text = currentScore.ToString();
         highScoreText.text = highScore.ToString();
@@ -190,5 +209,29 @@ public class GameManager : MonoBehaviour
         countdownText.gameObject.SetActive(false);
         pauseButton.SetActive(true);
         Time.timeScale = 1f;
+    }
+
+    IEnumerator SpawnItemRoutine()
+    {
+        while (isGameActive)
+        {
+            float waitTime = Random.Range(minSpawnDelay, maxSpawnDelay);
+            yield return new WaitForSeconds(waitTime);
+
+            if (isGameActive && !isPaused)
+            {
+                SpawnRandomItem();
+            }
+        }
+    }
+
+    void SpawnRandomItem()
+    {
+        float randomX = Random.Range(-spawnXLimit, spawnXLimit);
+        Vector2 spawnPos = new Vector2(randomX, spawnYLimit);
+
+        int randomIndex = Random.Range(0, itemPrefabs.Length);
+        Instantiate(itemPrefabs[randomIndex], spawnPos, Quaternion.identity);
+        Debug.Log("Spawned Item at: " + spawnPos);
     }
 }

@@ -979,6 +979,15 @@ MonoBehaviour:
   ball: {fileID: 63438515}
   booSound: {fileID: 8300000, guid: bcd5818bfe721e5479af7a7b8c0b0460, type: 3}
   mainMenuSceneName: Main_Menu
+  itemPrefabs:
+  - {fileID: 3681033382608015663, guid: 70203fb29e037a846b584428a75670a3, type: 3}
+  - {fileID: 4705773595117311158, guid: 4d68d4578596ba74db1346db6905edb1, type: 3}
+  - {fileID: 592518647295935554, guid: 4b1904580da431b44acc89f71ad66dd9, type: 3}
+  dropChance: 100
+  minSpawnDelay: 5
+  maxSpawnDelay: 15
+  spawnYLimit: 6
+  spawnXLimit: 7
 --- !u!82 &179321511
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2011,6 +2020,7 @@ MonoBehaviour:
   normalHitColor: {r: 1, g: 1, b: 1, a: 1}
   perfectHitColor: {r: 0.9716981, g: 0.8453612, b: 0.38042897, a: 1}
   hitSound: {fileID: 8300000, guid: 477a52e91d9c3214abcf9aee8ac8168a, type: 3}
+  powerUpDuration: 5
 --- !u!82 &823072911
 AudioSource:
   m_ObjectHideFlags: 0
