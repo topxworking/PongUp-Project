@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4172419442777652595}
   - component: {fileID: 6566937797947616419}
   m_Layer: 0
-  m_Name: Item_PowerUp
+  m_Name: Item_PowerDown
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 3
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: f52d8d2e37bb4b4478150090e19c54e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 111358d1f2284fc48b96454418215a73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
