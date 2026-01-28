@@ -2,15 +2,18 @@ using UnityEngine;
 
 public enum ItemType
 {
-    Score5,
-    Score10,
+    ScorePlus5,
+    ScorePlus10,
+    ScoreMinus5,
+    ScoreMinus10,
+    SmallPaddle,
     LargePaddle
 }
 
 public class Item : MonoBehaviour
 {
     public ItemType itemType;
-    public float fallSpeed = 3f;
+    public float fallSpeed = 1f;
 
     void Update()
     {

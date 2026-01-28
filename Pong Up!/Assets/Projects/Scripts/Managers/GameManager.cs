@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour
     {
         if (!isGameActive) return;
         currentScore += amount;
+        if (currentScore < 0) currentScore = 0;
         scoreText.text = currentScore.ToString();
 
         CheckDifficulty();

@@ -132,25 +132,32 @@ public class PaddleController : MonoBehaviour
     {
         switch (itemType)
         {
-            case ItemType.Score5:
-                GameManager.Instance.AddScore(5);
-                break;
-            case ItemType.Score10:
-                GameManager.Instance.AddScore(10);
-                break;
+            case ItemType.ScorePlus5: GameManager.Instance.AddScore(5); break;
+            case ItemType.ScorePlus10: GameManager.Instance.AddScore(10); break;
+            case ItemType.ScoreMinus5: GameManager.Instance.AddScore(-5); break;
+            case ItemType.ScoreMinus10: GameManager.Instance.AddScore(-10); break;
+
             case ItemType.LargePaddle:
                 if (sizeRoutine != null)
                 {
                     StopCoroutine(sizeRoutine);
                 }
-                sizeRoutine = StartCoroutine(LargePaddleRoutine());
+                sizeRoutine = StartCoroutine(ChangeSizeRoutine(1.5f));
+                break;
+
+            case ItemType.SmallPaddle:
+                if (sizeRoutine != null)
+                {
+                    StopCoroutine(sizeRoutine);
+                }
+                sizeRoutine = StartCoroutine(ChangeSizeRoutine(0.6f));
                 break;
         }
     }
 
-    IEnumerator LargePaddleRoutine()
+    IEnumerator ChangeSizeRoutine(float multiplier)
     {
-        transform.localScale = new Vector3(originalScale.x * 1.5f, originalScale.y, originalScale.z);
+        transform.localScale = new Vector3(originalScale.x * multiplier, originalScale.y, originalScale.z);
         yield return new WaitForSeconds(powerUpDuration);
         transform.localScale = originalScale;
     }

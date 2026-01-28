@@ -983,6 +983,9 @@ MonoBehaviour:
   - {fileID: 3681033382608015663, guid: 70203fb29e037a846b584428a75670a3, type: 3}
   - {fileID: 4705773595117311158, guid: 4d68d4578596ba74db1346db6905edb1, type: 3}
   - {fileID: 592518647295935554, guid: 4b1904580da431b44acc89f71ad66dd9, type: 3}
+  - {fileID: 3681033382608015663, guid: 38bcc2cc127426043aa2eeefa35469e4, type: 3}
+  - {fileID: 3681033382608015663, guid: 7e5edb188c8a1bb4ba13d91c68db150e, type: 3}
+  - {fileID: 592518647295935554, guid: f0cf25aeb83d4d54a8b41d18de46abeb, type: 3}
   minSpawnDelay: 5
   maxSpawnDelay: 15
   spawnYLimit: 6
