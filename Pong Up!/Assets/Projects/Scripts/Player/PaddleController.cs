@@ -19,47 +19,47 @@ public class PaddleController : MonoBehaviour
     public Color normalHitColor;
     public Color perfectHitColor;
     public AudioClip hitSound;
-    private AudioSource audioSource;
+    private AudioSource _audioSource;
 
     [Header("Item Settings")]
     public float powerUpDuration = 5f;
-    private Vector3 originalScale;
-    private Coroutine sizeRoutine;
+    private Vector3 _originalScale;
+    private Coroutine _sizeRoutine;
 
-    private GameInputs inputs;
-    private InputAction moveAction;
-    private InputAction dragAction;
+    private GameInputs _inputs;
+    private InputAction _moveAction;
+    private InputAction _dragAction;
 
     void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        inputs = new GameInputs();
-        moveAction = inputs.Player.Move;
-        dragAction = inputs.Player.Drag;
+        _audioSource = GetComponent<AudioSource>();
+        _inputs = new GameInputs();
+        _moveAction = _inputs.Player.Move;
+        _dragAction = _inputs.Player.Drag;
     }
 
     void Start()
     {
-        originalScale = transform.localScale;
+        _originalScale = transform.localScale;
     }
 
     void OnEnable()
     {
-        moveAction.Enable();
-        dragAction.Enable();
+        _moveAction.Enable();
+        _dragAction.Enable();
     }
 
     void OnDisable()
     {
-        moveAction.Disable();
-        dragAction.Disable();
+        _moveAction.Disable();
+        _dragAction.Disable();
     }
 
     void Update()
     {
-        if (dragAction.IsPressed())
+        if (_dragAction.IsPressed())
         {
-            Vector2 screenPos = moveAction.ReadValue<Vector2>();
+            Vector2 screenPos = _moveAction.ReadValue<Vector2>();
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(screenPos);
 
             float targetX = Mathf.Clamp(mousePos.x, -horrizontalLimit, horrizontalLimit);
@@ -83,13 +83,13 @@ public class PaddleController : MonoBehaviour
             {
                 GameManager.Instance.AddScore(2);
                 finalEffectColor = perfectHitColor;
-                if (audioSource) audioSource.pitch = 1.2f;
+                if (_audioSource) _audioSource.pitch = 1.2f;
             }
             else
             {
                 GameManager.Instance.AddScore(1);
                 finalEffectColor = normalHitColor;
-                if (audioSource) audioSource.pitch = Random.Range(0.9f, 1.1f);
+                if (_audioSource) _audioSource.pitch = Random.Range(0.9f, 1.1f);
             }
 
             float hVel = hitOffset * edgeAngleMultiplier;
@@ -99,9 +99,9 @@ public class PaddleController : MonoBehaviour
             }
             ballRb.linearVelocity = new Vector2(hVel, bounceForce);
 
-            if (audioSource && hitSound)
+            if (_audioSource && hitSound)
             {
-                audioSource.PlayOneShot(hitSound);
+                _audioSource.PlayOneShot(hitSound);
             }
 
             if (hitEffect)
@@ -138,27 +138,27 @@ public class PaddleController : MonoBehaviour
             case ItemType.ScoreMinus10: GameManager.Instance.AddScore(-10); break;
 
             case ItemType.LargePaddle:
-                if (sizeRoutine != null)
+                if (_sizeRoutine != null)
                 {
-                    StopCoroutine(sizeRoutine);
+                    StopCoroutine(_sizeRoutine);
                 }
-                sizeRoutine = StartCoroutine(ChangeSizeRoutine(1.5f));
+                _sizeRoutine = StartCoroutine(ChangeSizeRoutine(1.5f));
                 break;
 
             case ItemType.SmallPaddle:
-                if (sizeRoutine != null)
+                if (_sizeRoutine != null)
                 {
-                    StopCoroutine(sizeRoutine);
+                    StopCoroutine(_sizeRoutine);
                 }
-                sizeRoutine = StartCoroutine(ChangeSizeRoutine(0.6f));
+                _sizeRoutine = StartCoroutine(ChangeSizeRoutine(0.6f));
                 break;
         }
     }
 
     IEnumerator ChangeSizeRoutine(float multiplier)
     {
-        transform.localScale = new Vector3(originalScale.x * multiplier, originalScale.y, originalScale.z);
+        transform.localScale = new Vector3(_originalScale.x * multiplier, _originalScale.y, _originalScale.z);
         yield return new WaitForSeconds(powerUpDuration);
-        transform.localScale = originalScale;
+        transform.localScale = _originalScale;
     }
 }

@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
     [Header("Game References")]
     public GameObject ball;
     public AudioClip booSound;
-    private AudioSource audioSource;
-    private Rigidbody2D ballRb;
+    private AudioSource _audioSource;
+    private Rigidbody2D _ballRb;
 
     [Header("Scene Management")]
     public string mainMenuSceneName;
@@ -39,31 +39,31 @@ public class GameManager : MonoBehaviour
     public float spawnYLimit = 6f;
     public float spawnXLimit = 7f;
 
-    private Coroutine itemSpawnerCoroutine;
-    private int lastDifficultyMilestone = 0;
-    private int currentScore = 0;
-    private bool isGameActive = false;
-    private bool isPaused = false;
-    private GameInputs inputs;
+    private Coroutine _itemSpawnerCoroutine;
+    private int _lastDifficultyMilestone = 0;
+    private int _currentScore = 0;
+    private bool _isGameActive = false;
+    private bool _isPaused = false;
+    private GameInputs _inputs;
 
     private void Awake()
     {
         Instance = this;
-        inputs = new GameInputs();
-        ballRb = ball.GetComponent<Rigidbody2D>();
-        audioSource = GetComponent<AudioSource>();
+        _inputs = new GameInputs();
+        _ballRb = ball.GetComponent<Rigidbody2D>();
+        _audioSource = GetComponent<AudioSource>();
         Time.timeScale = 0f;
     }
 
     void OnEnable()
     {
-        inputs.Player.Pause.Enable();
-        inputs.Player.Pause.performed += _ => PauseButton();
+        _inputs.Player.Pause.Enable();
+        _inputs.Player.Pause.performed += _ => PauseButton();
     }
 
     void OnDisable()
     {
-        inputs.Player.Pause.Disable();
+        _inputs.Player.Pause.Disable();
     }
 
     void Start()
@@ -90,34 +90,34 @@ public class GameManager : MonoBehaviour
 
     void StartGame()
     {
-        isGameActive = true;
+        _isGameActive = true;
         Time.timeScale = 1f;
         pauseButton.SetActive(true);
-        ballRb.linearVelocity = new Vector2(Random.Range(-2f, 2f), -6f);
+        _ballRb.linearVelocity = new Vector2(Random.Range(-2f, 2f), -6f);
 
-        if (itemSpawnerCoroutine != null)
+        if (_itemSpawnerCoroutine != null)
         {
-            StopCoroutine(itemSpawnerCoroutine);
+            StopCoroutine(_itemSpawnerCoroutine);
         }
-        itemSpawnerCoroutine = StartCoroutine(SpawnItemRoutine());
+        _itemSpawnerCoroutine = StartCoroutine(SpawnItemRoutine());
     }
     public void AddScore(int amount)
     {
-        if (!isGameActive) return;
-        currentScore += amount;
-        if (currentScore < 0) currentScore = 0;
-        scoreText.text = currentScore.ToString();
+        if (!_isGameActive) return;
+        _currentScore += amount;
+        if (_currentScore < 0) _currentScore = 0;
+        scoreText.text = _currentScore.ToString();
 
         CheckDifficulty();
     }
 
     void CheckDifficulty()
     {
-        int currentMilestone = currentScore / pointsToIncrease;
+        int currentMilestone = _currentScore / pointsToIncrease;
 
-        if (currentMilestone > lastDifficultyMilestone)
+        if (currentMilestone > _lastDifficultyMilestone)
         {
-            lastDifficultyMilestone = currentMilestone;
+            _lastDifficultyMilestone = currentMilestone;
             DifficultyBoost();
         }
     }
@@ -139,39 +139,39 @@ public class GameManager : MonoBehaviour
 
     public void PauseButton()
     {
-        if (!isGameActive || gameOverPanel.activeSelf || countdownText.gameObject.activeSelf) return;
+        if (!_isGameActive || gameOverPanel.activeSelf || countdownText.gameObject.activeSelf) return;
 
-        isPaused = !isPaused;
-        pausePanel.SetActive(isPaused);
-        pauseButton.SetActive(!isPaused);
-        Time.timeScale = isPaused ? 0f : 1f;
+        _isPaused = !_isPaused;
+        pausePanel.SetActive(_isPaused);
+        pauseButton.SetActive(!_isPaused);
+        Time.timeScale = _isPaused ? 0f : 1f;
     }
 
     public void GameOver()
     {
-        isGameActive = false;
+        _isGameActive = false;
         Time.timeScale = 0f;
         pauseButton.SetActive(false);
 
         int highScore = PlayerPrefs.GetInt("HighScore", 0);
-        if (currentScore > highScore)
+        if (_currentScore > highScore)
         {
-            highScore = currentScore;
+            highScore = _currentScore;
             PlayerPrefs.SetInt("HighScore", highScore);
         }
 
-        if (audioSource != null && booSound != null)
+        if (_audioSource != null && booSound != null)
         {
-            audioSource.PlayOneShot(booSound);
+            _audioSource.PlayOneShot(booSound);
         }
 
-        if (itemSpawnerCoroutine != null)
+        if (_itemSpawnerCoroutine != null)
         {
-            StopCoroutine(itemSpawnerCoroutine);
+            StopCoroutine(_itemSpawnerCoroutine);
         }
 
         gameOverPanel.SetActive(true);
-        finalScoreText.text = currentScore.ToString();
+        finalScoreText.text = _currentScore.ToString();
         highScoreText.text = highScore.ToString();
     }
 
@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour
 
     public void ResumeButton()
     {
-        isPaused = false;
+        _isPaused = false;
         pausePanel.SetActive(false);
         pauseButton.SetActive(true);
 
@@ -214,12 +214,12 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SpawnItemRoutine()
     {
-        while (isGameActive)
+        while (_isGameActive)
         {
             float waitTime = Random.Range(minSpawnDelay, maxSpawnDelay);
             yield return new WaitForSeconds(waitTime);
 
-            if (isGameActive && !isPaused)
+            if (_isGameActive && !_isPaused)
             {
                 SpawnRandomItem();
             }

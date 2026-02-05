@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class GameVersion : MonoBehaviour
 {
-    private TextMeshProUGUI gameVersion;
+    private TextMeshProUGUI _gameVersion;
 
     private void Start()
     {
-        gameVersion = GetComponent<TextMeshProUGUI>();
-        if (gameVersion != null)
+        _gameVersion = GetComponent<TextMeshProUGUI>();
+        if (_gameVersion != null)
         {
-            gameVersion.text = "Version " + Application.version;
+            _gameVersion.text = "Version " + Application.version;
         }
     }
 }
