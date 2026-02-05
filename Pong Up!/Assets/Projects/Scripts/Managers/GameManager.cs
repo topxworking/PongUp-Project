@@ -233,6 +233,5 @@ public class GameManager : MonoBehaviour
 
         int randomIndex = Random.Range(0, itemPrefabs.Length);
         Instantiate(itemPrefabs[randomIndex], spawnPos, Quaternion.identity);
-        Debug.Log("Spawned Item at: " + spawnPos);
     }
 }
