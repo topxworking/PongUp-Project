@@ -16,7 +16,7 @@ PlayerSettings:
   productName: Pong Up!
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.3137255, g: 0.50980395, b: 0.58431375, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.2, g: 0.13725491, b: 0.32156864, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
