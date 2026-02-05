@@ -1,25 +1,10 @@
 fileFormatVersion: 2
-guid: 4a14274a8e077434ea1c84a07c39a019
+guid: e916117634f3a7b499eff5f029e7d5eb
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -3204201768363067060
     second: ponguplogo_0
-  - first:
-      213: 2019251555681439994
-    second: ponguplogo_1
-  - first:
-      213: -821549276376343694
-    second: ponguplogo_2
-  - first:
-      213: 7768606185585174070
-    second: ponguplogo_3
-  - first:
-      213: 5538828413097029234
-    second: ponguplogo_4
-  - first:
-      213: 2954566485594261446
-    second: ponguplogo_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -131,10 +116,10 @@ TextureImporter:
       name: ponguplogo_0
       rect:
         serializedVersion: 2
-        x: 465
-        y: 1020
-        width: 197
-        height: 240
+        x: 125
+        y: 316
+        width: 1670
+        height: 1195
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,116 +130,6 @@ TextureImporter:
       bones: []
       spriteID: c497a00e7736883d0800000000000000
       internalID: -3204201768363067060
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ponguplogo_1
-      rect:
-        serializedVersion: 2
-        x: 668
-        y: 1051
-        width: 787
-        height: 277
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af01c886792d50c10800000000000000
-      internalID: 2019251555681439994
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ponguplogo_2
-      rect:
-        serializedVersion: 2
-        x: 867
-        y: 643
-        width: 358
-        height: 434
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 27bdb1039454994f0800000000000000
-      internalID: -821549276376343694
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ponguplogo_3
-      rect:
-        serializedVersion: 2
-        x: 1253
-        y: 798
-        width: 153
-        height: 330
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 636e4bb7a22afcb60800000000000000
-      internalID: 7768606185585174070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ponguplogo_4
-      rect:
-        serializedVersion: 2
-        x: 465
-        y: 592
-        width: 360
-        height: 428
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 27e2d72881fdddc40800000000000000
-      internalID: 5538828413097029234
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ponguplogo_5
-      rect:
-        serializedVersion: 2
-        x: 1262
-        y: 669
-        width: 138
-        height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6c7ce1f809ab00920800000000000000
-      internalID: 2954566485594261446
       vertices: []
       indices: 
       edges: []
@@ -274,11 +149,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       ponguplogo_0: -3204201768363067060
-      ponguplogo_1: 2019251555681439994
-      ponguplogo_2: -821549276376343694
-      ponguplogo_3: 7768606185585174070
-      ponguplogo_4: 5538828413097029234
-      ponguplogo_5: 2954566485594261446
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
