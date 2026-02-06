@@ -141,10 +141,17 @@ public class GameManager : MonoBehaviour
     {
         if (!_isGameActive || gameOverPanel.activeSelf || countdownText.gameObject.activeSelf) return;
 
-        _isPaused = !_isPaused;
-        pausePanel.SetActive(_isPaused);
-        pauseButton.SetActive(!_isPaused);
-        Time.timeScale = _isPaused ? 0f : 1f;
+        if (!_isPaused)
+        {
+            _isPaused = true;
+            pausePanel.SetActive(true);
+            pauseButton.SetActive(false);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            ResumeButton();
+        }
     }
 
     public void GameOver()
@@ -188,6 +195,8 @@ public class GameManager : MonoBehaviour
 
     public void ResumeButton()
     {
+        if (countdownText.gameObject.activeSelf) return;
+
         _isPaused = false;
         pausePanel.SetActive(false);
         pauseButton.SetActive(true);
