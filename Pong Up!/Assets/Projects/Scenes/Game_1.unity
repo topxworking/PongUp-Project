@@ -2233,7 +2233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PaddleController
   moveSpeed: 25
-  horrizontalLimit: 8.5
+  horrizontalLimit: 7.5
   bounceForce: 14
   edgeAngleMultiplier: 7
   centerThreshold: 0.2
