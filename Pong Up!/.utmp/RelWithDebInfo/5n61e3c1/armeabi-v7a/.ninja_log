@@ -21,3 +21,5 @@
 39	2016	7920628606653158	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	c6b259aa3d10611c
 7	2159	7920628608051363	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	a5d22f3948562859
 2159	2298	7920628609505467	C:/Works/Unity Projects/PongUp-Project/Pong Up!/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5n61e3c1/obj/armeabi-v7a/libgame.so	b882f8255ea1aa76
+6	144	7920721135483724	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	27ad611d341c24d0
+144	341	7920721137346668	C:/Works/Unity Projects/PongUp-Project/Pong Up!/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5n61e3c1/obj/armeabi-v7a/libswappywrapper.so	b0f6a997b962766b
