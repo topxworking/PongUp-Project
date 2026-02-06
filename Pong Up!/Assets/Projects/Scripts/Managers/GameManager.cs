@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject pausePanel;
     public GameObject pauseButton;
+    public GameObject settingPanel;
+    public GameObject settingButton;
+    public GameObject resumeButton;
+    public GameObject homeButton;
     public TextMeshProUGUI countdownText;
 
     [Header("Score UI")]
@@ -145,6 +149,8 @@ public class GameManager : MonoBehaviour
         {
             _isPaused = true;
             pausePanel.SetActive(true);
+            settingButton.SetActive(true);
+            settingPanel.SetActive(false);
             pauseButton.SetActive(false);
             Time.timeScale = 0f;
         }
@@ -197,8 +203,12 @@ public class GameManager : MonoBehaviour
     {
         if (countdownText.gameObject.activeSelf) return;
 
+        resumeButton.SetActive(true);
+        homeButton.SetActive(true);
+
         _isPaused = false;
         pausePanel.SetActive(false);
+        settingButton.SetActive(false);
         pauseButton.SetActive(true);
 
         StartCoroutine(ResumeCountdown());
@@ -242,5 +252,17 @@ public class GameManager : MonoBehaviour
 
         int randomIndex = Random.Range(0, itemPrefabs.Length);
         Instantiate(itemPrefabs[randomIndex], spawnPos, Quaternion.identity);
+    }
+
+    public void SettingButton()
+    {
+        if (settingPanel != null)
+        {
+            bool isActive = settingPanel.activeSelf;
+            settingPanel.SetActive(!isActive);
+
+            resumeButton.SetActive(isActive);
+            homeButton.SetActive(isActive);
+        }
     }
 }
