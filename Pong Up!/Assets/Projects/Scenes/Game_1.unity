@@ -2232,7 +2232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f8808a7ee443a4788e0febb560b00c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PaddleController
-  moveSpeed: 25
+  moveSpeed: 30
   horrizontalLimit: 7.5
   bounceForce: 14
   edgeAngleMultiplier: 7
