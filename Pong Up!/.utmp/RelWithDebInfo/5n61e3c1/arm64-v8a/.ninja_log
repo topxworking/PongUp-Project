@@ -1,23 +1,23 @@
 # ninja log v5
-19	2889	7909731486992262	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	190946f87ff6b7fe
-92	821	7909731466279885	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	35af460efe2f45b5
-29	2391	7909731481768626	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	9dbeba75843b9527
-823	1277	7909731469985579	C:/Works/Unity Projects/PongUp-Project/Pong Up!/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5n61e3c1/obj/arm64-v8a/libswappywrapper.so	5e6feac034cc6431
-51	2370	7909731481601292	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	e2b92c7b61b1868
-10	2509	7909731483178382	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	7956255ecc0cf361
-76	2445	7909731482095636	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	cf0eae226460b1c6
-64	2759	7909731485668345	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	5e7144713a19cbe
-1	2447	7909731482095636	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	29df3b3a115b5f6
-39	2778	7909731485844450	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f8ad6da017765178
-2890	3009	7909731488173313	C:/Works/Unity Projects/PongUp-Project/Pong Up!/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5n61e3c1/obj/arm64-v8a/libgame.so	12cbb0c8ddcebf4e
+24	2423	7919913957417913	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	190946f87ff6b7fe
 98	536	7919913938503614	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	35af460efe2f45b5
 536	1017	7919913942555486	C:/Works/Unity Projects/PongUp-Project/Pong Up!/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5n61e3c1/obj/arm64-v8a/libswappywrapper.so	5e6feac034cc6431
 60	2027	7919913953384891	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	9dbeba75843b9527
 41	2030	7919913953440118	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	e2b92c7b61b1868
 71	2061	7919913953749817	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	cf0eae226460b1c6
-32	2062	7919913953775354	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	29df3b3a115b5f6
 14	2137	7919913954527673	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	7956255ecc0cf361
-50	2321	7919913956408772	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f8ad6da017765178
-24	2423	7919913957417913	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	190946f87ff6b7fe
+32	2062	7919913953775354	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	29df3b3a115b5f6
 85	2461	7919913957783080	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	5e7144713a19cbe
+50	2321	7919913956408772	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f8ad6da017765178
 2461	2592	7919913959125013	C:/Works/Unity Projects/PongUp-Project/Pong Up!/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5n61e3c1/obj/arm64-v8a/libgame.so	12cbb0c8ddcebf4e
+121	749	7920628549381818	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	35af460efe2f45b5
+750	1337	7920628554934190	C:/Works/Unity Projects/PongUp-Project/Pong Up!/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5n61e3c1/obj/arm64-v8a/libswappywrapper.so	5e6feac034cc6431
+50	2666	7920628568696674	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	e2b92c7b61b1868
+76	2692	7920628568968063	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	9dbeba75843b9527
+28	2721	7920628569168400	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	29df3b3a115b5f6
+90	2723	7920628569253448	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	cf0eae226460b1c6
+39	2786	7920628569921201	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	7956255ecc0cf361
+63	3012	7920628572200947	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f8ad6da017765178
+16	3143	7920628573528243	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	190946f87ff6b7fe
+105	3161	7920628573704419	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	5e7144713a19cbe
+3161	3322	7920628575349071	C:/Works/Unity Projects/PongUp-Project/Pong Up!/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5n61e3c1/obj/arm64-v8a/libgame.so	12cbb0c8ddcebf4e
